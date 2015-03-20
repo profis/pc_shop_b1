@@ -31,7 +31,6 @@ class B1_import_admin_api extends PC_plugin_admin_api {
 		}
 		
 		$this->shop = $this->core->Get_object('PC_shop_manager');
-		$this->shop->products->absorb_debug_settings($this);
 		$category = $this->_get_import_category();
 		$this->_out['count_created'] = 0;
 		$this->_out['count_existing'] = 0;

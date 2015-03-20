@@ -55,13 +55,6 @@ class B1_rest {
 		} else {
 			return null;
 		}
-		$logger = new PC_debug();
-		
-		$logger->debug('server responce start', 4);
-		$logger->debug('server responce code ['.$this->responseInfo['http_code'].']', 4);
-		$logger->debug($this->responseInfo);		
-		$logger->debug($this->responseBody);
-		$logger->debug('server responce end', 4);
 		return $rez;
 	}
 	

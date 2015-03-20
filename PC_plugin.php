@@ -3,22 +3,6 @@
 
 function b1_after_order_create($params) {
 	global $cfg;
-	$logger = false;
-	if (isset($params['logger'])) {
-		$logger = $params['logger'];
-	}
-	if (!$logger) {
-		$logger = new PC_debug();
-	}
-	
-	$logger->debug('b1_after_order_create()', 1);
-	$logger->debug('order_id:', 1);
-	$logger->debug($params['order_id'], 2);
-	$logger->debug('order_data:', 1);
-	$logger->debug($params['order_data'], 2);
-	$logger->debug('other_data:', 1);
-	$logger->debug($params['other_data'], 2);
-	
 	$rest = new B1_rest($cfg['b1']['private_key'], $cfg['b1']['api_key']);
 	
 	$order = array(
@@ -80,17 +64,9 @@ function b1_after_order_create($params) {
 	//1=>array('id'=>'', 'name'=>'supper duper preke', 'quantity'=>3*100, 'price'=>10.55*100, 'sum'=>31.65*100),
 	//2=>array('id'=>'', 'name'=>'supper duper paslauga', 'quantity'=>6*100, 'price'=>10.55*100, 'sum'=>63.3*100),
 
-	$logger->debug('B1 order:', 4);
-	$logger->debug($order, 4);
-	
 	//$test_items = $rest->rest('eshopkatalogas');
-	//$logger->debug('$test_items from response:', 4);
-	//$logger->debug($test_items, 4);
-	
+
 	$list = $rest->rest('pardavimas', null, null, null, $order);
-	$logger->debug('Rest response:', 4);
-	$logger->debug($list, 4);
-	
 }
 
 

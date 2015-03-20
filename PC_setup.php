@@ -1,6 +1,6 @@
 <?php
 function b1_install($controller) {
-	global $core, $logger;
+	global $core;
 	
 	$core->Set_config_if('api_key', '', $controller);
 	$core->Set_config_if('private_key', '', $controller);
@@ -10,7 +10,7 @@ function b1_install($controller) {
 }
 
 function pc_shop_payment_paypal_uninstall($controller) {
-	global $core, $logger;
+	global $core;
 	
 	//Todo: delete config
 	

@@ -25,13 +25,6 @@ $plugin_file = $plugin_url . basename(__FILE__);
 
 $plugin_path = $cfg['url']['base'].$cfg['directories']['core_plugins_www'].'/'.$plugin_name;
 
-if (!isset($logger)) {
-	$logger = new PC_debug();
-	$logger->debug = true;
-	$logger->set_instant_debug_to_file($cfg['path']['logs'] . 'plugins/pc_shop_b1.html', false, 5);
-}
-$logger->debug('Starting plugin dialog', 3);
-
 $mod['name'] = 'B1';
 $mod['onclick'] = 'mod_pc_shop_b1_click()';
 $mod['priority'] = 10;
